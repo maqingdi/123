@@ -17,5 +17,16 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'testartifact'
+    ArtifactName: 'feed1'
     publishLocation: 'Container'
+ 
+- task: UniversalPackages@0
+  displayName: Publish a Universal Package
+  inputs:
+    command: publish
+    publishDirectory: '$(Build.ArtifactStagingDirectory)'
+    vstsFeedPublish: 'testpj1/feed1'
+    vstsFeedPackagePublish: 'testpkg'
+    packagePublishDescription: 'foobar'
+ 
+ 
