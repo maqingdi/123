@@ -1,7 +1,0 @@
-package com.example;
-
-public class Greeting {
-    public String getGreetingMessage() {
-        return "Hello, welcome to my Java project!";
-    }
-}
