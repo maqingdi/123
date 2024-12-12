@@ -17,7 +17,7 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'feed1'
+    ArtifactName: 'maqingdi'
     publishLocation: 'Container'
  
 - task: UniversalPackages@0
