@@ -1,0 +1,24 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+# 检查出代码
+- checkout: self
+
+# 生成文件
+- script: |
+    echo "Hello, Azure Artifacts!" > output.txt
+  displayName: "Generate a file"
+
+# 上传文件到 Azure Artifacts 的通用 Feed
+- task: UniversalPackages@0
+  inputs:
+    command: 'publish'
+    publishDirectory: '$(System.DefaultWorkingDirectory)'  # 上传的目录
+    feedsToUse: 'internal'                                # 使用内部 Feed
+    vstsFeed: 'MyArtifactsFeed'                           # Feed 名称
+    packageName: 'MyGeneratedFile'                        # 包名称
+    packageVersion: '1.0.0'                               # 包版本
