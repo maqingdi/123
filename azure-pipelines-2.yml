@@ -25,8 +25,7 @@ steps:
   inputs:
     command: publish
     publishDirectory: '$(Build.ArtifactStagingDirectory)'
-    vstsFeedPublish: 'testpj1/feed1'
-    vstsFeedPackagePublish: 'NK-Trial'
+    vstsFeedPublish: 'feed1'
     packagePublishDescription: 'foobar'
  
  
