@@ -25,7 +25,7 @@ steps:
   inputs:
     command: publish
     publishDirectory: '$(Build.ArtifactStagingDirectory)'
-    vstsFeedPublish: 'testpj1/feed1'
+    vstsFeedPublish: 'maqingdi.123/feed1'
     vstsFeedPackagePublish: 'testpkg'
     packagePublishDescription: 'foobar'
  
